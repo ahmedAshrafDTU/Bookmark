@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="./images/logoURL.png" type="image/icon type">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="vh-100 w-100 py-5 container">
+        <section>
+            <h1 class="text-center mb-5">Bookmarker</h1>
+        </section>
+        <section class="partTwo">
+
+            <h2 class="header text-center my-4">
+                <i class="fa-solid fa-bookmark" style="color:rgb(60, 165, 92)"></i>
+                <span style="color:rgb(60, 165, 92)">Bookmark your</span>
+                <span style="color:rgb(181, 172, 73)">favorite sites</span>
+
+                <i class="fa-solid fa-bookmark" style="color:rgb(181, 172, 73)"></i>
+            </h2>
+
+            <label for="siteName"><i class="fa-solid fa-book-bookmark"></i> site Name</label>
+            <input type="text" id="siteName" class="form-control mb-3" placeholder="bookmark name">
+            <label for="siteUrl"><i class="fa-solid fa-link"></i> site Url</label>
+            <input type="url" id="siteUrl" class="form-control" placeholder="website url">
+            <div id="all">
+                <button id="add" onclick="add()" class="btn btn-submit">submit</button>
+
+            </div>
+
+            <div class="alert  position-absolute top-50 start-50 p-5" id="alert">
+                <i onclick="document.getElementById('alert').style = 'display:none'"
+                    class="fa-solid fa-xmark close fs-3 position-absolute closeIcone"></i>
+                <div class="circle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <h2 class="mt-3">Site Name or Url is not valid, Please follow the rules below :</h2>
+                <p> <i class="fa-regular fa-circle-right p-2"></i>
+                    Site name must contain at least 3 characters</p>
+                <p><i class="fa-regular fa-circle-right p-2"></i>
+                    Site URL must be a valid one</p>
+            </div>
+        </section>
+        <table class="table">
+            <input onkeyup="search(this.value)" type="text" class="form-control container my-4" placeholder="search about website name">
+            <thead>
+                <tr>
+                    <th>index</th>
+                    <th>website name</th>
+                    <th>visit</th>
+                    <th>delete</th>
+                    <th>update</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+
+        </table>
+    </header>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
